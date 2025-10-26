@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light dark;
+  --accent: #5f4bff;
+  --background: #f6f6fb;
+  --foreground: #1f1f2e;
+  --card-bg: #ffffff;
+  --border: #d9d8f0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+header,
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  color: #5d5d72;
+}
+
+main {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(45, 42, 85, 0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+input,
+select,
+textarea,
+button {
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  border: none;
+}
+
+button:disabled {
+  background: #c7c5f6;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(95, 75, 255, 0.3);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+li {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.feedback {
+  background: #16162a;
+  color: #f8f8ff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  min-height: 3rem;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  font-size: 0.9rem;
+  color: #676789;
+}

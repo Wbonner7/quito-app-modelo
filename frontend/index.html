@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quito - Painel do Anunciante</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Quito – Plataforma do Anunciante</h1>
+      <p class="subtitle">Gerencie planos, anúncios e métricas em um só lugar.</p>
+    </header>
+
+    <main>
+      <section class="card" id="plans-card">
+        <h2>Planos disponíveis</h2>
+        <button id="load-plans">Atualizar planos</button>
+        <ul id="plans-list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Criar anunciante</h2>
+        <form id="advertiser-form">
+          <label>Nome<input type="text" name="name" required /></label>
+          <label>E-mail<input type="email" name="email" required /></label>
+          <label>Tipo
+            <select name="advertiser_type" required>
+              <option value="broker">Corretor</option>
+              <option value="agency">Imobiliária</option>
+              <option value="developer">Incorporadora</option>
+            </select>
+          </label>
+          <label>Plano<select name="plan_id" required></select></label>
+          <label>Documento<input type="text" name="document" required /></label>
+          <label>Status do documento
+            <select name="document_status">
+              <option value="active">Ativo</option>
+              <option value="inactive">Inativo</option>
+            </select>
+          </label>
+          <label id="metadata-label">Metadados (JSON)
+            <textarea name="metadata" rows="3">{"creci": ""}</textarea>
+          </label>
+          <button type="submit">Cadastrar anunciante</button>
+        </form>
+        <pre class="feedback" id="advertiser-feedback"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Criar imóvel</h2>
+        <form id="property-form">
+          <label>ID do anunciante<input type="text" name="advertiser_id" required /></label>
+          <label>Título<input type="text" name="title" required /></label>
+          <label>Descrição<textarea name="description" rows="2" required></textarea></label>
+          <label>Preço<input type="number" name="price" required /></label>
+          <label>Endereço<input type="text" name="address" required /></label>
+          <label>Quartos<input type="number" name="bedrooms" required /></label>
+          <label>Banheiros<input type="number" name="bathrooms" required /></label>
+          <label>Área (m²)<input type="number" step="0.1" name="area_m2" required /></label>
+          <label>Comodidades (separadas por vírgula)<input type="text" name="amenities" /></label>
+          <button type="submit">Cadastrar imóvel</button>
+        </form>
+        <pre class="feedback" id="property-feedback"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Analytics do imóvel</h2>
+        <form id="analytics-form">
+          <label>ID do imóvel<input type="text" name="property_id" required /></label>
+          <button type="submit">Buscar analytics</button>
+        </form>
+        <button id="register-view" disabled>Registrar visualização</button>
+        <pre class="feedback" id="analytics-feedback"></pre>
+      </section>
+    </main>
+
+    <footer>
+      <p>Ambiente de demonstração conectado ao Supabase Simulator local.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

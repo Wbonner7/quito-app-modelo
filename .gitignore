@@ -1,0 +1,4 @@
+__pycache__/
+.venv/
+.supabase_simulator.json
+.pytest_cache/
